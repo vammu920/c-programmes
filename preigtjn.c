@@ -1,4 +1,5 @@
 
+
 #include <stdio.h> 
 
 void swap(int *xp, int *yp) 
@@ -13,8 +14,6 @@ void bubbleSort(int arr[], int n)
 { 
 int i, j; 
 for (i = 0; i < n-1; i++)	 
-
-	// Last i elements are already in place 
 	for (j = 0; j < n-i-1; j++) 
 		if (arr[j] > arr[j+1]) 
 			swap(&arr[j], &arr[j+1]); 
@@ -32,8 +31,13 @@ void printArray(int arr[], int size)
  
 int main() 
 { 
-	int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
+	int arr[1000], i, n;
+	printf("Enter the number of elements for the sort:");
+	scanf("%d", &n);
+	for(i=0;i<n;i++){
+       printf("Enter number %d: ", i+1);
+       scanf("%d", &arr[i]);
+	}
 	bubbleSort(arr, n); 
 	printf("Sorted array: \n"); 
 	printArray(arr, n); 
